@@ -3,6 +3,7 @@ version: '3'
 services:
   db:
     image: postgres
+    container_name: postgresql
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: rootpassword
@@ -10,6 +11,7 @@ services:
       - "./pgdata:/var/lib/postgresql/data"
   web:
     build: ./code
+    container_name: rails
     command: bundle exec rails s -b '0.0.0.0'
     volumes:
       - "./code:/rails-docker"
