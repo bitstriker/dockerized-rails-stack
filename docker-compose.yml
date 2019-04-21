@@ -14,7 +14,7 @@ services:
     container_name: rails
     command: bundle exec rails s -b '0.0.0.0'
     volumes:
-      - "./code:/rails-docker"
+      - "./code:/rails-code"
     ports:
       - "3000:3000"
     depends_on:
